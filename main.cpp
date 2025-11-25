@@ -151,7 +151,7 @@ int main(int argc, char *argv[]) {
 
     constexpr uint32_t RKGD_MAGIC = 1380665156;
 
-    if (std::filesystem::file_size(ghostPath) < 10240 || ghostReader.readUInt32(0) != RKGD_MAGIC) {
+    if (/* std::filesystem::file_size(ghostPath) < 10240 || */ ghostReader.readUInt32(0) != RKGD_MAGIC) {
         std::cerr << "This doesn't seem to be a valid RKG!\n";
         return 1;
     }
